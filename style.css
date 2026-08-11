@@ -2329,3 +2329,64 @@ footer {
 .hero-particle {
     display: none !important;
 }
+
+.project-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.7s ease, filter 0.7s ease;
+    filter: brightness(0.8);
+}
+
+.project-media:hover .project-video {
+    transform: scale(1.04);
+    filter: brightness(1);
+}
+
+.video-sound-indicator {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    background: rgba(5, 5, 5, 0.72);
+    border: 1px solid rgba(255, 36, 36, 0.35);
+    border-radius: 999px;
+
+    backdrop-filter: blur(12px);
+
+    color: #ffffff;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.sound-icon {
+    font-size: 11px;
+}
+
+.sound-text {
+    color: #aaaaaa;
+}
+
+.project-media:hover .video-sound-indicator {
+    border-color: rgba(255, 36, 36, 0.7);
+    transform: translateY(-2px);
+}
+
+.project-overlay {
+    pointer-events: none;
+}

@@ -576,3 +576,46 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+// =========================================
+// PORTFOLIO VIDEO SOUND TOGGLE
+// =========================================
+
+const projectVideos = document.querySelectorAll(".project-video");
+
+projectVideos.forEach((video) => {
+
+    const indicator =
+        video.parentElement.querySelector(".video-sound-indicator");
+
+    const icon =
+        indicator.querySelector(".sound-icon");
+
+    const text =
+        indicator.querySelector(".sound-text");
+
+
+    video.addEventListener("click", () => {
+
+        video.muted = !video.muted;
+
+        if (video.paused) {
+            video.play();
+        }
+
+
+        if (video.muted) {
+
+            icon.textContent = "🔇";
+            text.textContent = "SOUND OFF";
+
+        } else {
+
+            icon.textContent = "🔊";
+            text.textContent = "SOUND ON";
+
+        }
+
+    });
+
+});
