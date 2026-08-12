@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
     /* =====================================================
        CUSTOM CURSOR
     ===================================================== */
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let ringX = mouseX;
         let ringY = mouseY;
 
-
         document.addEventListener("mousemove", (event) => {
 
             mouseX = event.clientX;
@@ -48,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
             cursor.style.top = `${mouseY}px`;
 
         });
-
 
         function animateCursor() {
 
@@ -64,12 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         animateCursor();
 
-
         const interactiveElements =
             document.querySelectorAll(
                 "a, button, .project-media, .service-card"
             );
-
 
         interactiveElements.forEach((element) => {
 
@@ -81,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     "rgba(255, 36, 36, 0.9)";
 
             });
-
 
             element.addEventListener("mouseleave", () => {
 
@@ -97,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
     /* =====================================================
        MOBILE NAVIGATION
     ===================================================== */
@@ -108,15 +101,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks =
         document.querySelector(".nav-links");
 
-
     menuButton?.addEventListener("click", () => {
 
         navLinks?.classList.toggle("active");
-
         menuButton.classList.toggle("active");
 
     });
-
 
     document
         .querySelectorAll(".nav-links a")
@@ -132,14 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-
     /* =====================================================
        SCROLL REVEAL
     ===================================================== */
 
     const revealElements =
         document.querySelectorAll(".reveal");
-
 
     const revealObserver =
         new IntersectionObserver(
@@ -162,13 +150,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-
     revealElements.forEach((element) => {
 
         revealObserver.observe(element);
 
     });
-
 
 
     /* =====================================================
@@ -179,12 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ".work-grid, .services-grid, .philosophy-grid, .contact-links"
     );
 
-
     grids.forEach((grid) => {
 
         const children =
             grid.querySelectorAll(".reveal");
-
 
         children.forEach((child, index) => {
 
@@ -194,7 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
-
 
 
     /* =====================================================
@@ -210,11 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroGlow =
         document.querySelector(".hero-red-glow");
 
-
-    if (
-        hasFinePointer &&
-        heroVisual
-    ) {
+    if (hasFinePointer && heroVisual) {
 
         document.addEventListener(
             "mousemove",
@@ -226,11 +205,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const y =
                     (event.clientY / window.innerHeight - 0.5);
 
-
                 heroVisual.style.transform =
                     `translateY(-50%)
                      translate(${x * 14}px, ${y * 14}px)`;
-
 
                 if (heroGrid) {
 
@@ -238,7 +215,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         `translate(${x * -8}px, ${y * -8}px)`;
 
                 }
-
 
                 if (heroGlow) {
 
@@ -253,7 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
     /* =====================================================
        HERO IMAGE MOVEMENT
     ===================================================== */
@@ -261,11 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroImage =
         document.querySelector(".star-image img");
 
-
-    if (
-        hasFinePointer &&
-        heroImage
-    ) {
+    if (hasFinePointer && heroImage) {
 
         document.addEventListener(
             "mousemove",
@@ -277,7 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const y =
                     (event.clientY / window.innerHeight - 0.5);
 
-
                 heroImage.style.transform =
                     `scale(1.05)
                      translate(${x * 8}px, ${y * 8}px)`;
@@ -286,7 +256,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
     }
-
 
 
     /* =====================================================
@@ -302,21 +271,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 const targetId =
                     link.getAttribute("href");
 
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) return;
-
+                if (!targetId || targetId === "#") return;
 
                 const target =
                     document.querySelector(targetId);
 
-
                 if (!target) return;
 
-
                 event.preventDefault();
-
 
                 target.scrollIntoView({
                     behavior: "smooth",
@@ -328,14 +290,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-
     /* =====================================================
        BACK TO TOP
     ===================================================== */
 
     const backTop =
         document.querySelector(".back-top");
-
 
     backTop?.addEventListener("click", () => {
 
@@ -345,7 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
-
 
     backTop?.addEventListener("keydown", (event) => {
 
@@ -366,7 +325,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
     /* =====================================================
        NAVBAR SCROLL EFFECT
     ===================================================== */
@@ -374,9 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navbar =
         document.querySelector(".navbar");
 
-
     let lastScroll = 0;
-
 
     window.addEventListener(
         "scroll",
@@ -385,9 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const currentScroll =
                 window.scrollY;
 
-
             if (!navbar) return;
-
 
             if (currentScroll > 30) {
 
@@ -407,7 +361,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-
             lastScroll = currentScroll;
 
         },
@@ -417,14 +370,12 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-
     /* =====================================================
        PROJECT HOVER EFFECT
     ===================================================== */
 
     const projects =
         document.querySelectorAll(".project-media");
-
 
     if (hasFinePointer) {
 
@@ -437,20 +388,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     const rect =
                         project.getBoundingClientRect();
 
-
                     const x =
                         event.clientX - rect.left;
 
                     const y =
                         event.clientY - rect.top;
 
-
                     const rotateX =
                         ((y / rect.height) - 0.5) * -3;
 
                     const rotateY =
                         ((x / rect.width) - 0.5) * 3;
-
 
                     project.style.transform =
                         `perspective(900px)
@@ -459,7 +407,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 }
             );
-
 
             project.addEventListener(
                 "mouseleave",
@@ -476,14 +423,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
     /* =====================================================
        SERVICE CARD LIGHT EFFECT
     ===================================================== */
 
     const serviceCards =
         document.querySelectorAll(".service-card");
-
 
     if (hasFinePointer) {
 
@@ -496,19 +441,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     const rect =
                         card.getBoundingClientRect();
 
-
                     const x =
                         event.clientX - rect.left;
 
                     const y =
                         event.clientY - rect.top;
 
-
                     card.style.setProperty(
                         "--mouse-x",
                         `${x}px`
                     );
-
 
                     card.style.setProperty(
                         "--mouse-y",
@@ -521,7 +463,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
-
 
 
     /* =====================================================
@@ -538,7 +479,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const imageContainer =
                     document.querySelector(".star-image");
-
 
                 if (imageContainer) {
 
@@ -558,7 +498,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
     }
-
 
 
     /* =====================================================
@@ -585,34 +524,30 @@ const projectVideos = document.querySelectorAll(".project-video");
 
 projectVideos.forEach((video) => {
 
-    const indicator =
-        video.parentElement.querySelector(".video-sound-indicator");
-
-    const icon =
-        indicator.querySelector(".sound-icon");
-
-    const text =
-        indicator.querySelector(".sound-text");
-
-
     video.addEventListener("click", () => {
 
-        video.muted = !video.muted;
-
-        if (video.paused) {
-            video.play();
-        }
-
-
+        // If this video is muted, mute/pause every other video first
         if (video.muted) {
 
-            icon.textContent = "🔇";
-            text.textContent = "SOUND OFF";
+            projectVideos.forEach((otherVideo) => {
+
+                if (otherVideo !== video) {
+
+                    otherVideo.muted = true;
+                    otherVideo.pause();
+
+                }
+
+            });
+
+            // Turn sound on for this video
+            video.muted = false;
+            video.play();
 
         } else {
 
-            icon.textContent = "🔊";
-            text.textContent = "SOUND ON";
+            // Turn sound off
+            video.muted = true;
 
         }
 
