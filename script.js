@@ -505,7 +505,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ===================================================== */
 
     console.log(
-        "%cDARKSTAR",
+        "%cDARKNOXA",
         "font-size: 28px; font-weight: 900; color: #ff2424;"
     );
 
